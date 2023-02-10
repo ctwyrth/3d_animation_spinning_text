@@ -72,4 +72,25 @@ body {
    align-items: center;
    transform: rotateY(calc(90deg * var(--i))) translateZ(150px);
    transition: 0.5s;
+   cursor: pointer;
+   font-size: 6em;
+   text-transform: uppercase;
+   z-index: 10;
+   line-height: 1em;
+   -webkit-text-stroke: 3px #000;
+   transform-style: preserve-3d;
+}
+
+.box .text span:nth-child(4) {
+   font-size: 4.25em;
+}
+
+.box .text span::before {
+   content: attr(data-text);
+   position: absolute;
+   bottom: 7px;
+   transform-origin: bottom;
+   transform: rotateX(-90deg);
+   color: rgba(0, 0, 0, 0.1);
+   -webkit-text-stroke: 0px #000;
 }
