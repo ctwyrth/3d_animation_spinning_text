@@ -44,16 +44,16 @@ body {
 .box .block span {
    position: absolute;
    left: calc(50% - 100px);
-   width: 200px;
+   width: 240px;
    height: 100px;
-   background: #444;
-   transform: rotateY(calc(90deg * var(--i))) translateZ(100px);
+   background: rgb(68, 26, 96);
+   transform: rotateY(calc(60deg * var(--i))) translateZ(207px);
    transition: 0.5s;
 }
 
 .box:hover .block span {
-   background: #f00;
-   filter: drop-shadow(0 0 50px #f00);
+   background: rgb(155, 78, 207);
+   filter: drop-shadow(0 0 50px rgb(155, 78, 207));
 }
 
 /* .box .text {
@@ -65,15 +65,15 @@ body {
 .box .text span {
    position: absolute;
    width: 100%;
-   height: 100%;
+   height: 110px;
    color: #fff;
    display: flex;
    justify-content: center;
    align-items: center;
-   transform: rotateY(calc(90deg * var(--i))) translateZ(150px);
+   transform: rotateY(calc(60deg * var(--i))) translateZ(267px);
    transition: 0.5s;
    cursor: pointer;
-   font-size: 6em;
+   font-size: 7em;
    text-transform: uppercase;
    z-index: 10;
    line-height: 1em;
@@ -81,16 +81,37 @@ body {
    transform-style: preserve-3d;
 }
 
-.box .text span:nth-child(4) {
-   font-size: 4.25em;
+.box .text span:nth-child(2) {
+   font-size: 6em;
 }
 
 .box .text span::before {
    content: attr(data-text);
    position: absolute;
-   bottom: 7px;
+   bottom: 0;
    transform-origin: bottom;
    transform: rotateX(-90deg);
-   color: rgba(0, 0, 0, 0.1);
+   color: rgba(0, 0, 0, 0.05);
    -webkit-text-stroke: 0px #000;
+   filter: blur(5px);
+}
+
+.box:hover .text span::before {
+   color: rgba(0, 0, 0, 0.1)
+}
+
+.box .text span::after {
+   content: '';
+   position: absolute;
+   top: 100px;
+   width: 340px;
+   height: 60px;
+   background: rgb(68, 26, 96);
+   transform: rotateX(-90deg);
+   transition: 0.5s;
+}
+
+.box:hover .text span::after {
+   background: rgb(155, 78, 207);
+   filter: drop-shadow(0 0 20px rgb(155, 78, 207));
 }
